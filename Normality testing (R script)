@@ -265,7 +265,7 @@ tukey.CGE <- TukeyHSD(CGE.anova)
 
 ########### Generate CLD letter of significance - without Rv ########################################
 
-cld.NP.par.sat <- multcompLetters4(Max_NP_PARsat.anova ,tukeyNP.par.sat)
+cld.NP.par.sat <- multcompLetters4(Max_NP_PARsat.anova, tukeyNP.par.sat)
 print(cld.NP.par.sat)
 
 cldDR.par.sat <- multcompLetters4(Max_DR_PARsat.anova,tukeyDR.par.sat)
