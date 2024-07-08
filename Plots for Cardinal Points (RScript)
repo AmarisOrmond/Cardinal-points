@@ -50,7 +50,7 @@ library(dplyr)
 ################################################################################################################################################
 #################### NP at PAR SAT ##################################################################
   
-  numbersno.rv <- Cardinal_points_TABLE %>% 
+  numbersno.rv <- cardinal_points_github %>% 
     group_by(Species) %>% 
     summarise (
       sd = sd(Max_NP_PARsat, na.rm = TRUE),
@@ -86,7 +86,7 @@ ylab("Maximum net photosynthesis <br>(nmol g<sup>-1  </sup> s<sup>-1</sup> )")
 #######################################################################################################
 ################ DR at PARSAT ##############################
 
-numbers12 <- Cardinal_points_TABLE %>% 
+numbers12 <- cardinal_points_github %>% 
   group_by(Species) %>% 
   summarise (
     sd = sd(Max_DR_PARsat, na.rm = TRUE),
@@ -132,7 +132,7 @@ DR.PARSat <- ggplot(data = numbers12, aes(x = as.factor(Species), y = drmean, co
 
 ####### LCP ##########################################################
 
-numbers3 <- Cardinal_points_TABLE %>% 
+numbers3 <- cardinal_points_github %>% 
   group_by(Species) %>% 
   summarise (
     sd = sd(LCP, na.rm = TRUE),
@@ -169,7 +169,7 @@ LCP.for.grid <- ggplot(data = numbers3, aes(x = Species, y = LCP, colour = facto
 ####################################################
 ####### LSP ####################################################################################
 
-numbers4 <- Cardinal_points_TABLE %>% 
+numbers4 <- cardinal_points_github %>% 
   group_by(Species) %>% 
   summarise (
     sd = sd(LSP, na.rm = TRUE),
@@ -207,7 +207,7 @@ LSP.for.grid <- ggplot(data = numbers4, aes(x = Species, y = LSP, colour = facto
 
 ###########################################################
 ########################## Chl ###############################################################################
-numbers5 <- Cardinal_points_TABLE %>% 
+numbers5 <- cardinal_points_github %>% 
   group_by(Species) %>% 
   summarise (
     sd = sd(Chl, na.rm = TRUE),
@@ -244,6 +244,12 @@ Chl.for.grid <- ggplot(data = numbers5, aes(x = Species, y = Chl, colour = facto
 
 ##############################################################################################
 #################### CGE #########################################################
+
+
+
+
+
+
 Carbon.efficiency <- ggplot(data = CGE, aes(x = Species, y = CGE, colour = factor(Species), fill = factor(Species))) + 
   geom_bar(stat="identity") +
   geom_errorbar(aes(ymin = NPDR - sd, ymax = NPDR + sd), width = 0.2, color = "black", position = position_dodge(0.9))  +            
@@ -269,7 +275,7 @@ Carbon.efficiency <- ggplot(data = CGE, aes(x = Species, y = CGE, colour = facto
 
 ######################## WC min #################################################################
 
-numbers7 <- Cardinal_points_TABLE %>% 
+numbers7 <- cardinal_points_github %>% 
   group_by(Species) %>% 
   summarise (
     sd = sd(WC_Min, na.rm = TRUE),
@@ -303,7 +309,7 @@ WC_min <- ggplot(data = numbers7, aes(x = Species, y = WC, colour = factor(Speci
 
 
 ###################### WC Max ############################################################################
-numbers8 <- Cardinal_points_TABLE %>% 
+numbers8 <- cardinal_points_github %>% 
   group_by(Species) %>% 
   summarise (
     sd = sd(WC_Max, na.rm = TRUE),
@@ -342,7 +348,7 @@ WC_max <- ggplot(data = numbers8, aes(x = Species, y = WC, colour = factor(Speci
 ######## WC optimal range  #####################################################################################
 
 
-numbers6 <- Cardinal_points_TABLE %>% 
+numbers6 <- cardinal_points_github %>% 
   group_by(Species) %>% 
   summarise (
     sd = sd(WC_Optimal_Range, na.rm = TRUE),
